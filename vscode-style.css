@@ -1,0 +1,90 @@
+/* Badge Color */
+.monaco-workbench .activitybar>.content .monaco-action-bar .badge .badge-content {
+  background: linear-gradient(45deg, #2020c2, #1cb5e0);
+  color: white !important;
+}
+
+/* Active tab stripe */
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.sizing-fit.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+  opacity: 1;
+  z-index: 6;
+}
+
+.monaco-workbench .part.editor>.content .editor-group-container>.title .tabs-container>.tab.sizing-fit::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 0px;
+  transition: opacity 1s;
+  opacity: 0;
+  z-index: 6;
+}
+
+/* make active tab border transparent */
+#workbench\.parts\.editor > div.content > div.grid-view-container > div > div > div > div.monaco-scrollable-element.mac > div.split-view-container > div > div > div.title.tabs.show-file-icons > div.tabs-and-actions-container > div.monaco-scrollable-element.mac > div.tabs-container > div.tab.tab-actions-right.sizing-fit.has-icon.active.tab-border-bottom {
+  --tab-border-bottom-color: transparent !important;
+}
+
+/* checked action item style */
+li.action-item.checked > a.codicon:not([aria-label="Docker"]) {
+  background: -webkit-linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* action item style */
+li.action-item > a.action-label:not([aria-label="Docker"]) {
+  background: -webkit-linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* fallback for docker icon */
+#workbench\.parts\.activitybar > div > div.composite-bar > div > ul > li > a[aria-label="Docker"]{
+  background: -webkit-linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%) !important;
+}
+
+/* action item tab stripe */
+.monaco-workbench .activitybar > .content :not(.monaco-menu) > .monaco-action-bar .action-item.checked .active-item-indicator:before {
+  position: absolute;
+  left: 0;
+  top:0;
+  bottom:0;
+  width: 3px;
+  background: -webkit-linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%) !important;
+  border: none;
+}
+
+/* override cursor style */
+.monaco-editor .cursors-layer .cursor {
+  background: #12c2e9; 
+  background: -webkit-linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%) !important;
+  border-radius: 4px;
+}
+
+/* Title label */
+.window-title,.title-label, h3.title, .codicon  {
+  -webkit-background-clip: text !important;
+  background: linear-gradient( to bottom,  rgba(0,221,214,1) 0%, rgba(51,102,255,1) 90% );
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  font-weight: 600;
+}
+.codicon.codicon-warning {
+  -webkit-background-clip: text !important;
+  background: linear-gradient( 109.6deg,  rgba(245,56,56,1) 11.2%, rgba(234,192,117,1) 78% );
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  
+}
