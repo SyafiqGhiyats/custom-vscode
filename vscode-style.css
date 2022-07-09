@@ -80,7 +80,8 @@ li.action-item.checked > a.action-label:not([role="button"]) {
 }
 
 /* action item style */
-li.action-item > a.action-label:not([role="button"]) {
+li.action-item > a.action-label:not([role="button"]),
+.collapsed::before {
   background-image: -webkit-linear-gradient(
     -20deg,
     #b721ff 0%,
@@ -89,7 +90,8 @@ li.action-item > a.action-label:not([role="button"]) {
   background-size: 40px;
 }
 
-li.action-item > a.action-label.codicon {
+li.action-item > a.action-label.codicon,
+.collapsed::before {
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
@@ -153,4 +155,38 @@ h3.title,
   );
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
+}
+
+.visible .slider {
+  background: -webkit-linear-gradient(
+    -20deg,
+    #b721ff 0%,
+    #21d4fd 100%
+  ) !important;
+  border: none;
+  opacity: 0.4;
+  animation: hue-rotate 30s linear infinite;
+  animation-delay: 5s;
+}
+.visible .slider:hover {
+  opacity: 0.6;
+}
+.monaco-editor .minimap-slider .minimap-slider-horizontal {
+  background: -webkit-linear-gradient(
+    -20deg,
+    #b721ff 0%,
+    #21d4fd 100%
+  ) !important;
+  border: none;
+  opacity: 0;
+  animation: hue-rotate 30s linear infinite;
+  animation-delay: 5s;
+}
+
+.monaco-editor .minimap:hover .minimap-slider .minimap-slider-horizontal {
+  opacity: 0.2;
+}
+
+.monaco-editor .minimap-slider.active .minimap-slider-horizontal {
+  opacity: 0.3;
 }
