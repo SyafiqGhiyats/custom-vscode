@@ -3,7 +3,7 @@
   --bg-gradient: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%) !important;
   --bg-gradient-warning: linear-gradient(
     109.6deg,
-    rgba(245, 56, 56, 1) 11.2%,
+    rgba(245, 56, 56, 1) 11s2%,
     rgba(234, 192, 117, 1) 78%
   ) !important;
   --bg-gradient-secondary: linear-gradient(45deg, #2020c2, #1cb5e0) !important;
@@ -19,7 +19,7 @@
   .monaco-action-bar
   .badge
   .badge-content {
-  background: var(--bg-gradient-secondary);
+  background: var(--box-shadow-gradient);
   color: white !important;
 }
 
@@ -144,28 +144,17 @@ h3.title,
   -webkit-text-fill-color: transparent !important;
 }
 
-.visible .slider {
-  background: var(--bg-gradient);
+.slider,
+.monaco-editor .minimap-slider,
+.diffOverview .diffViewport {
+  background: var(--box-shadow-gradient) !important;
   border: none;
-  opacity: 0.4;
-  animation: var(--hue-rotate-animation);
+  opacity: 0.4 !important;
+  animation: var(--hue-rotate-animation) !important;
 }
+
 .visible .slider:hover {
   opacity: 0.6;
-}
-.monaco-editor .minimap-slider .minimap-slider-horizontal {
-  background: var(--bg-gradient);
-  border: none;
-  opacity: 0;
-  animation: var(--hue-rotate-animation);
-}
-
-.monaco-editor .minimap:hover .minimap-slider .minimap-slider-horizontal {
-  opacity: 0.2;
-}
-
-.monaco-editor .minimap-slider.active .minimap-slider-horizontal {
-  opacity: 0.3;
 }
 
 .xterm-rows .xterm-cursor.xterm-cursor-block {
@@ -185,7 +174,7 @@ h3.title,
   > .composite-bar.panel-switcher-container
   li.action-item.checked
   > .active-item-indicator::before {
-  background: var(--bg-gradient);
+  background: var(--box-shadow-gradient);
   animation: var(--hue-rotate-animation);
   height: 2.5px;
   border: none;
@@ -221,8 +210,14 @@ h3.title,
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 }
+
+.context-view .monaco-hover {
+  overflow: visible !important;
+}
+
 .monaco-editor .suggest-widget:before,
 .monaco-editor .find-widget:before,
+.context-view .monaco-hover:before,
 .overflowingContentWidgets .monaco-hover:before {
   content: "";
   z-index: -1;
@@ -242,6 +237,7 @@ h3.title,
 
 .monaco-editor .suggest-widget::after,
 .monaco-editor .find-widget::after,
+.context-view .monaco-hover:after,
 .overflowingContentWidgets .monaco-hover::after {
   content: "";
   z-index: -1;
@@ -260,7 +256,7 @@ h3.title,
 
 @keyframes hue-rotate {
   to {
-    filter: hue-rotate();
+    filter: hue-rotate(360deg);
   }
 }
 
